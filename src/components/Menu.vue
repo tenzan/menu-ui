@@ -1,11 +1,20 @@
 <template>
-  <div>
-    <table v-for="item in menuItems" :key="item.name">
-      {{
-        item.name
-      }}
-    </table>
-  </div>
+  <v-simple-table>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">Name</th>
+          <th class="text-left">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in desserts" :key="item.name">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
 </template>
 
 <script>
@@ -14,16 +23,20 @@ export default {
     return {
       menuItems: {
         1: {
-          name: "Apple"
+          name: "Apple",
+          price: 20
         },
         2: {
-          name: "Orange"
+          name: "Orange",
+          price: 21
         },
         3: {
-          name: "Pear"
+          name: "Pear",
+          price: 22
         },
         4: {
-          name: "Grape"
+          name: "Grape",
+          price: 23
         }
       }
     };
