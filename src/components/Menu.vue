@@ -1,7 +1,7 @@
 <template>
   <v-simple-table>
     <template v-slot:default>
-      <tbody>
+      <tbody class="table">
         <tr
           v-for="item in menuItems"
           :key="item.name"
@@ -63,7 +63,14 @@ export default {
 
 <style scoped>
 .highlight {
-  background-color: grey;
+  color: black;
+  background: white;
   font-weight: 900;
+  -webkit-background-clip: border;
+  border: 20px solid rgba(0, 0, 0, 0.3);
+}
+.table {
+  color: white;
+  background: rgb(120, 146, 120);
 }
 </style>
